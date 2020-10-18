@@ -12,11 +12,11 @@ public class WarmUpConfiguration {
 
     @Bean
     public HelloWorld helloBean() {
-        return new HelloWorld(printer);
+        return new HelloWorld();
     }
 
     @Bean
     public HelloWorld buzzBuzz() {
-        return new HelloWorld(printer);
+        return new HelloWorld();
     }
 }

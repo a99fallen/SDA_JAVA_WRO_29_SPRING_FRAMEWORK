@@ -4,7 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 import pl.a99fallen.spring.core.config.WarmUpConfiguration;
-import pl.a99fallen.spring.core.warmup.HelloWorld;
+import pl.a99fallen.spring.core.warmup.HelloWorld_3_1;
 
 public class Application {
 
@@ -14,21 +14,21 @@ public class Application {
         context.scan("/pl.a99fallen.spring.core.warmup");
 //        context.refresh();
 
-        HelloWorld helloBean = context.getBean("helloBean", HelloWorld.class);
+        HelloWorld_3_1 helloBean = context.getBean("helloBean", HelloWorld_3_1.class);
         helloBean.sayHello();
 
-        HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
+        HelloWorld_3_1 helloWorld = context.getBean("helloWorld", HelloWorld_3_1.class);
         helloWorld.sayHello();
 
         System.out.println(helloBean == helloWorld);
 
-        HelloWorld helloBean2 = context.getBean("helloBean", HelloWorld.class);
-        HelloWorld helloWorld2 = context.getBean("helloWorld", HelloWorld.class);
+        HelloWorld_3_1 helloBean2 = context.getBean("helloBean", HelloWorld_3_1.class);
+        HelloWorld_3_1 helloWorld2 = context.getBean("helloWorld", HelloWorld_3_1.class);
 
         System.out.println(helloBean == helloBean2);
         System.out.println(helloWorld == helloWorld2);
 
-        HelloWorld helloBuzz = context.getBean("buzzBuzz", HelloWorld.class);
+        HelloWorld_3_1 helloBuzz = context.getBean("buzzBuzz", HelloWorld_3_1.class);
         System.out.println("HELLO BUZZ");
         helloBuzz.sayHello();
 
@@ -39,22 +39,22 @@ public class Application {
 
     public static void classPathWarmUp() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        HelloWorld bean = (HelloWorld) context.getBean("helloBean");
+        HelloWorld_3_1 bean = (HelloWorld_3_1) context.getBean("helloBean");
         bean.sayHello();
 
     }
     public static void genericContextA1() {
         GenericApplicationContext context = new GenericApplicationContext();
-        context.registerBean("helloWorld", HelloWorld.class);
+        context.registerBean("helloWorld", HelloWorld_3_1.class);
         context.refresh();
 
-        HelloWorld bean = (HelloWorld) context.getBean("helloWorld");
+        HelloWorld_3_1 bean = (HelloWorld_3_1) context.getBean("helloWorld");
         bean.sayHello();
 
-        bean = context.getBean("helloWorld", HelloWorld.class);
+        bean = context.getBean("helloWorld", HelloWorld_3_1.class);
         bean.sayHello();
 
-        bean = context.getBean(HelloWorld.class);
+        bean = context.getBean(HelloWorld_3_1.class);
         bean.sayHello();
     }
 }

@@ -9,15 +9,18 @@ import pl.a99fallen.spring.core.components.printers.DialogPrinter;
 import pl.a99fallen.spring.core.components.printers.Printer;
 
 import javax.swing.text.html.Option;
+import java.util.Collection;
 import java.util.Optional;
 import java.util.Random;
 
 @Component
 public class HelloWorld {
 
-    private DialogPrinter dialogPrinter;
+    private Printer dialogPrinter;
     private Printer consolePrinter;
     private Printer somePrinter;
+
+    private Collection<Printer> printers;
 
     @Autowired @Primary
     public void setSomePrinter(Printer somePrinter) {
@@ -32,6 +35,11 @@ public class HelloWorld {
     @Autowired
     public HelloWorld (DialogPrinter dialogPrinter) {
         this.dialogPrinter = dialogPrinter;
+    }
+
+    @Autowired
+    public void setPrinters(Collection<Printer> printers) {
+        this.printers = printers;
     }
 
     public HelloWorld() {

@@ -94,6 +94,4 @@ public class UserController {
 //        countries.add("Hiszpania");
         return Arrays.asList("Polska","Niemcy", "Francja");
     }
-
-
 }

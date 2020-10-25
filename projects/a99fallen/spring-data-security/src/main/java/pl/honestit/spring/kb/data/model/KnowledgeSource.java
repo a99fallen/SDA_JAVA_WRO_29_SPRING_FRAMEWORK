@@ -1,5 +1,7 @@
 package pl.honestit.spring.kb.data.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
@@ -7,6 +9,8 @@ import java.util.Set;
 
 @Entity // Oznaczamy, że klasa jest encją
 @Table(name = "knowledge_sources") // Dodajemy informację o nazwie tabeli dla encji
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@EqualsAndHashCode(of = "id")
 public class KnowledgeSource {
 
     @Id // Wskazujemy pole klucza głównego
@@ -30,85 +34,4 @@ public class KnowledgeSource {
 
     @ManyToMany(mappedBy = "knownSources")
     private Set<User> knowingUsers = new HashSet<>();
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public Set<Skill> getConnectedSkills() {
-        return connectedSkills;
-    }
-
-    public void setConnectedSkills(Set<Skill> connectedSkills) {
-        this.connectedSkills = connectedSkills;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        KnowledgeSource that = (KnowledgeSource) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "KnowledgeSource{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", url='" + url + '\'' +
-                ", active=" + active +
-                '}';
-    }
-
-    public Set<User> getKnowingUsers() {
-        return knowingUsers;
-    }
-
-    public void setKnowingUsers(Set<User> knowingUsers) {
-        this.knowingUsers = knowingUsers;
-    }
 }

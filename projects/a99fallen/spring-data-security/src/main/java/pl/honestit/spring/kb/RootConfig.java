@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan
 @EnableWebMvc
-@EnableJpaRepositories(basePackages = "pl.honestit.spring.kb.data.repository")
+@EnableJpaRepositories(basePackages = "pl.honestit.spring.kb.data.repositories")
 @EnableTransactionManagement
 
 public class RootConfig {

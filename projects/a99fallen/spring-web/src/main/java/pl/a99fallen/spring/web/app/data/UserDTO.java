@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
-public class User {
+public class UserDTO {
 
     private Long id;
     private String firstName;
@@ -17,8 +17,6 @@ public class User {
     private Integer age;
     private String gender;
     private String country;
-    private LocalDateTime createdOn;
-    private LocalDateTime modifiedOn;
     private Long actualVersion;
 
 //    public Long getId() {
@@ -65,7 +63,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        UserDTO user = (UserDTO) o;
         return Objects.equals(id, user.id);
     }
 
@@ -83,8 +81,6 @@ public class User {
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", country='" + country + '\'' +
-                ", createdOn=" + createdOn +
-                ", modifiedOn=" + modifiedOn +
                 ", actualVersion=" + actualVersion +
                 '}';
     }

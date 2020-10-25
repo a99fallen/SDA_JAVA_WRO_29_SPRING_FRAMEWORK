@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/view")
+@RequestMapping("/home")
 public class HomeController {
 
     @Value("#{systemProperties['user.name']}")
@@ -17,5 +17,10 @@ public class HomeController {
     @ResponseBody
     public String sayHello() {
         return username + " jesteś dupa";
+    }
+
+    @GetMapping("/say-hello")
+    public String sayHelloWithView() {
+        return "hello";
     }
 }

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>USER</title>
+</head>
+<body>
+<h1>Profil użytkownika</h1>
+<div th:text="|Użytkownik o id: ${user.id}|">Id: 0</div>
+<div th:text="|Imię: ${user.firstName}|">Imię: Jan</div>
+<div th:text="|Nazwisko: ${user.lastName}|">Nazwisko: Kowalski</div>
+<div th:text="|Wiek: ${user.age}|">Wiek: 35</div>
+<div th:text="|Płeć: ${user.gender}|">Płeć: mężczyzna</div>
+</body>
+</html>

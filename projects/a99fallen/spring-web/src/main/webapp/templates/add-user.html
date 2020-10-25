@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Podaj dane użytkownika</h2>
+<form method="post" action="/users/add">
+    <fieldset>
+        <legend>Dane idenyfikacyne</legend>
+        <div><label for="firstName">Imię: </label></div>
+            <input type="text" name="firstName" id="firstName"/></div>
+        <div><label for="lastName">Nazwisko: </label>
+            <input type="text" name="lastName" id="lastName"/></div>
+    </fieldset>
+    <fieldset>
+        <legend>Dane osobowe</legend>
+        <div><label for="age">Wiek: </label>
+            <input type="number" min="9" max="120" step="1" name="age" id="age"/></div>
+        <div><label for="gender">Płeć: </label>
+            <select name="gender" id="gender">
+                <option value="-" selected>-- Wybierz płeć --</option>
+                <option value="Mężczyzna">Mężczyzna</option>
+                <option value="Kobieta">Kobieta</option>
+            </select>
+        </div>
+        <div><label for="country">Narodowość: </label>
+            <select name="country" id="country">
+                <option value="-" selected>-- Wybierz narodowość --</option>
+                <option value="Niemcy">Niemcy</option>
+                <option value="Polska">Polska</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+    </fieldset>
+    <div>
+        <input type="submit" value="Dodaj"/>
+        <input type="reset" value="Wyczyść"/>
+    </div>
+</form>
+</body>
+</html>
